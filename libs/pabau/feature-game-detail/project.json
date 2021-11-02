@@ -1,0 +1,25 @@
+{
+  "root": "libs/pabau/feature-game-detail",
+  "sourceRoot": "libs/pabau/feature-game-detail/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/pabau/feature-game-detail/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/pabau/feature-game-detail"],
+      "options": {
+        "jestConfig": "libs/pabau/feature-game-detail/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}

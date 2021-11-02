@@ -1,0 +1,69 @@
+{
+  "root": "apps/pabau",
+  "sourceRoot": "apps/pabau/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/pabau",
+        "index": "apps/pabau/src/index.html",
+        "baseHref": "/",
+        "main": "apps/pabau/src/main.tsx",
+        "polyfills": "apps/pabau/src/polyfills.ts",
+        "tsConfig": "apps/pabau/tsconfig.app.json",
+        "assets": ["apps/pabau/src/favicon.ico", "apps/pabau/src/assets"],
+        "styles": ["apps/pabau/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/pabau/src/environments/environment.ts",
+              "with": "apps/pabau/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "pabau:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "pabau:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/pabau/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/pabau"],
+      "options": {
+        "jestConfig": "apps/pabau/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,29 @@
+{
+  "root": "apps/pabau-e2e",
+  "sourceRoot": "apps/pabau-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/pabau-e2e/cypress.json",
+        "devServerTarget": "pabau:serve",
+        "tsConfig": "apps/pabau-e2e/tsconfig.json"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "pabau:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/pabau-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["pabau"]
+}

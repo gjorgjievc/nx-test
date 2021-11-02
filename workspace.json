@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "projects": {
+    "pabau": "apps/pabau",
+    "pabau-e2e": "apps/pabau-e2e",
+    "pabau-feature-game-detail": "libs/pabau/feature-game-detail",
+    "pabau-ui-shared": "libs/pabau/ui-shared",
+    "pabau-util-formatters": "libs/pabau/util-formatters"
+  }
+}

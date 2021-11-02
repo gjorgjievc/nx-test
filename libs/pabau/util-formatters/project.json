@@ -1,0 +1,23 @@
+{
+  "root": "libs/pabau/util-formatters",
+  "sourceRoot": "libs/pabau/util-formatters/src",
+  "projectType": "library",
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/pabau/util-formatters/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/pabau/util-formatters"],
+      "options": {
+        "jestConfig": "libs/pabau/util-formatters/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

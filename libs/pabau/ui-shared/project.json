@@ -1,0 +1,23 @@
+{
+  "root": "libs/pabau/ui-shared",
+  "sourceRoot": "libs/pabau/ui-shared/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/pabau/ui-shared/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/pabau/ui-shared"],
+      "options": {
+        "jestConfig": "libs/pabau/ui-shared/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  }
+}
